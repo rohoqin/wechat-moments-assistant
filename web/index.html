@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>朋友圈工作台 · 若洪大叔</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="workspace">
+    <aside class="sidebar">
+      <a class="wordmark" href="/" aria-label="朋友圈工作台首页"><span class="mark">若</span><span>若洪大叔<small>创作工作台</small></span></a>
+      <button id="new-post" class="primary new-button"><span>＋</span> 新建文案</button>
+      <div class="list-heading"><span>朋友圈文案</span><span id="post-count">0</span></div>
+      <nav id="post-list" aria-label="文案列表"></nav>
+      <div class="sidebar-foot"><span class="local-dot"></span> 本地保存 <span class="divider">/</span> 持续创作</div>
+    </aside>
+    <main>
+      <header class="topbar"><span>内容生产 <span class="crumb">/</span> 朋友圈</span><span class="author">Roho Qin</span></header>
+      <section class="page-heading"><div><div class="eyebrow">WRITE SOMETHING REAL</div><h1>朋友圈工作台</h1><p>把一件事说清楚，写成自己的话。</p></div><span class="edition">本地版 <i>01</i></span></section>
+      <div id="notice" role="status" class="notice" hidden></div>
+      <section class="studio">
+        <div class="writing-panel">
+          <div class="panel-top"><span id="editor-label">开始一篇新记录</span><span id="status" class="status">草稿</span></div>
+          <label class="sr-only" for="title">文案主题</label><input id="title" maxlength="120" placeholder="给这篇文案一个主题" autocomplete="off">
+          <label class="sr-only" for="body">朋友圈正文</label><textarea id="body" placeholder="从一个真实的经历、观察，或刚想到的判断开始……" spellcheck="false"></textarea>
+          <div class="editor-footer"><span><b id="character-count">0</b> 字符</span><span id="save-status">尚未保存</span></div>
+          <div class="editor-actions"><button id="save" class="secondary">保存修改</button><button id="confirm" class="primary">确认定稿并归档</button><button id="reload-post" class="secondary" hidden>载入最新稿</button></div>
+          <p id="action-hint" class="helper">先保存文案。确认定稿后，同时写入仓库与 Obsidian。</p>
+          <section class="history-section"><div class="section-heading"><h2>文案版本</h2><span id="version-count">尚无版本</span></div><div id="versions" class="versions"><span class="empty-inline">保存后，修改记录会留在这里。</span></div></section>
+        </div>
+        <aside class="visual-panel">
+          <div class="section-heading"><h2>配图与预览</h2><span class="muted">01 张</span></div>
+          <label class="field-label" for="style">配图风格</label>
+          <div class="select-wrap"><select id="style"><option value="auto">自动 · 按文案选择</option><option value="水彩">温暖水彩</option><option value="极简插画">极简插画</option><option value="写实摄影感">写实摄影感</option><option value="黑白线稿">黑白线稿</option><option value="custom">自定义风格</option></select></div>
+          <input id="custom-style" aria-label="自定义配图风格" placeholder="输入你想要的风格" maxlength="200" hidden>
+          <div class="image-stage" id="image-stage"><div class="empty-visual"><div class="visual-symbol" aria-hidden="true"><span></span><span></span><span></span></div><h3>先把文案写好</h3><p>定稿后，让画面接住这段话。</p></div></div>
+          <div class="image-actions"><button id="image-request" class="secondary">复制配图请求</button><label class="upload-button secondary" id="upload-label" for="image-file">导入配图<input type="file" id="image-file" accept="image/png,image/jpeg,image/webp"></label></div>
+          <p id="image-hint" class="helper">确认并完成双份归档后，可以在 Codex 中生成配图，再回到这里查看。</p>
+          <div class="archive-panel"><div class="section-heading"><h2>归档结果</h2><span id="archive-date" class="muted">—</span></div><div class="archive-row"><span>本地仓库</span><span id="repo-result">待定稿</span></div><div class="archive-row"><span>Obsidian 月文件</span><span id="vault-result">待定稿</span></div><a id="download-text" class="text-link" hidden>下载当前正文 ↗</a><div id="archive-error" class="error-text" hidden></div></div>
+        </aside>
+      </section>
+      <footer class="page-footer"><span>真实 · 自然 · 有判断</span><span>每个小进展，都值得记下来。</span></footer>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

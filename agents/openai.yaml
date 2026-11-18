@@ -1,0 +1,4 @@
+interface:
+  display_name: "若洪大叔的朋友圈创作助手"
+  short_description: "结合人设 DNA 创作朋友圈，每篇定稿双份归档到仓库和 Obsidian 后配图"
+  default_prompt: "使用 $wechat-moments-assistant，结合我的人设创作朋友圈；先确认定稿，每篇都保存到仓库和 Obsidian 月文件，再按指定或自动风格配图。"
